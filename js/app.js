@@ -4,7 +4,7 @@
   console.log(changeDiv);
 }*/
 
-var fortunes = ["You will be happy", "Life's gonna bite you on the butt", "Life will be difficult, but it'll be worth it in the end", "You will be rich", "You're gonna be poooor"];
+var fortunes = ["You will be happy" , "Life's gonna bite you on the butt" , "Life will be difficult, but it'll be worth it in the end" , "You will be rich" , "You're gonna be poooor"];
 var fortune = "";
 var saidAll=false;
 
@@ -17,19 +17,18 @@ function hi() {
 		button.innerHTML = "Keep Clicking Me!";
 
 		if(fortune!= "") {
-			var node = "";
-			var textnode = document.createTextNode("fortune");
-			li.appendChild(textnode);
-			document.getElementById('li').appendChild(mode);
-
+			var node = document.createElement('LI');
+			var textnode = document.createTextNode(fortunes);
+			node.appendChild(textnode);
+			document.getElementById("list").appendChild(node);
 		}
 		if (fortunes.length>0) {
 			var num;
 			num - Math.floor(Math.random()*fortunes.length);
 			fortune = fortunes[num];
 
-			fortunes.splice(num, 1);
-			box.innerHTML = + fortunes;
+			fortunes.splice(0, 1);
+			box.innerHTML = + fortune;
 		}
 		else {
 			button.innerHTML = "You ran out of fortunes, oops";
